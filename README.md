@@ -10,7 +10,7 @@ var cnstr = $@"Version=3,uri=file:{dbfile}";
 if (File.Exists(dbfile)) {
 	File.Delete(dbfile);
 }
-using (var cn = (IDbConnection)new SqliteConnection(cnstr)) {
+using (var cn = /*(IDbConnection)*/new SqliteConnection(cnstr)) {
 	cn.Open();
 	using (var cmd = cn.CreateCommand()) {
 		cmd.CommandText = "create table testtable (no integer, id text, name text,age integer)";
